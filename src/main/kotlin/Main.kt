@@ -1,8 +1,13 @@
 import java.util.Scanner
+import kotlin.math.abs
+import kotlin.math.max
+import kotlin.math.min
 
 fun main() {
     //main11()
-    main12()
+    //main12()
+    //main14()
+    main121()
 
     /*
     println("Hello World!")
@@ -71,6 +76,29 @@ fun calc (a: Int, b: Int) : Int  { //unit=void
     return a + b
 }
 
-fun calc_sh(a: Int, b: Int) = a + b
+fun sum(a: Int, b: Int) = a / b
+fun main14() {
+    val (k, x, y) = readln().split(" ").map { it.toInt() }
 
+    if (max(x, y) >= k && abs(x - y) >= 2) {
+        println(0)
+    } else if (max(x, y) >= k && (abs(x - y) == 0)) {
+        println(2)
+    } else if (max(x, y) >= k && (abs(x - y) < 2)) {
+        println(abs(x - y))
+    } else println(k - max(x, y))
+}
 //JVM - Java Virtual Machine
+
+fun countVowels(s:String):Int {
+    var c:Int = 0
+    for (i in s) {
+        if (i in "aeiou") {
+           c++
+        }
+    }
+    return c;
+}
+fun main121() {
+    print(countVowels("hello"))
+}
